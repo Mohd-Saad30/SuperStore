@@ -93,7 +93,7 @@ const App = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/v1/products/all");
+        const res = await axios.get("https://super-store-backend.vercel.app/api/v1/products/all");
         // Your backend returns res.status(200).json(products), so res.data is the array
         setProducts(res.data); 
       } catch (err) {
