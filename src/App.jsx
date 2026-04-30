@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router';
 import axios from 'axios';
-import Admin from './Page/Admin';
-import AddProduct from './Page/AddProduct';
-import ManageProducts from './Page/ManageProducts';
-import Navbar from './components/Navbar';
+import Admin from './Page/Admin.jsx';
+import AddProduct from './Page/AddProduct.jsx';
+import ManageProducts from './Page/ManageProducts.jsx';
+import Navbar from './components/Navbar.jsx';
 import CategoryButtons from './components/CategoryButtons';
 import ProductCard from './components/ProductCard';
 import ProductModal from './components/ProductModal';

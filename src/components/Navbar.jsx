@@ -1,3 +1,5 @@
+import logoImage from "../assets/LOGO.jpeg";
+
 const Navbar = () => {
   return (
     <header className="w-full bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
@@ -6,7 +8,7 @@ const Navbar = () => {
         <div className="flex items-center gap-4">
          <div className="h-12 w-16 flex items-center justify-center overflow-hidden">
     <img 
-      src="src\assets\LOGO.jpeg"
+      src={logoImage}
       alt="Choice Store Logo" 
       className="max-h-full max-w-full object-contain" 
     />
