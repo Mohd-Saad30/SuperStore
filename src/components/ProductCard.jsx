@@ -1,9 +1,8 @@
 const ProductCard = ({ product, onClick }) => {
-  const sendWhatsApp = (e) => {
-    e.stopPropagation();
-    // Added price and category for better clarity in your WhatsApp inbox
+  const sendWhatsApp = () => {
+    
     const msg = `*Order Inquiry*\nProduct: ${product.name}\nCategory: ${product.category}\nPrice: ₹${product.price}\nImage: ${product.image}`;
-    window.open(`https://wa.me/9905763301?text=${encodeURIComponent(msg)}`, '_blank');
+    window.open(`https://wa.me/919905763301?text=${encodeURIComponent(msg)}`, '_blank');
   };
 
   // Calculate discount percentage
