@@ -4,9 +4,13 @@ const Navbar = () => {
       <nav className="max-w-[95%] md:max-w-[80%] mx-auto py-4 flex justify-between items-center">
       
         <div className="flex items-center gap-4">
-          <div className="bg-[#e67e22] text-white px-3 py-2 font-bold text-xl leading-none">
-            LH
-          </div>
+         <div className="h-12 w-16 flex items-center justify-center overflow-hidden">
+    <img 
+      src="src\assets\LOGO.jpeg"
+      alt="Choice Store Logo" 
+      className="max-h-full max-w-full object-contain" 
+    />
+  </div>
         </div>
 
 

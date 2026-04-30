@@ -157,7 +157,7 @@ const ProductModal = ({ product, onClose }) => {
             <img 
               src={images[currentIndex]} 
               alt="product" 
-              className="w-full h-full object-contain" 
+              className="w-full h-full object-contain object-cover" 
             />
           </div>
 
@@ -168,8 +168,8 @@ const ProductModal = ({ product, onClose }) => {
                 key={i} 
                 onClick={() => setCurrentIndex(i)} 
                 className={`relative shrink-0 cursor-pointer border-2 transition-all ${currentIndex === i ? 'border-blue-500' : 'border-transparent'}`}
-              >
-                <img src={item} alt="thumb" className="w-16 h-16 object-cover" />
+              > 
+                <img src={item} alt="thumb" className="w-16 h-16  object-cover object-contain" />
               </div>
             ))}
           </div>
@@ -240,7 +240,7 @@ const ProductModal = ({ product, onClose }) => {
             src={productVideo} 
             controls 
             autoPlay 
-            className="max-w-full max-h-full shadow-2xl"
+            className="max-w-full max-h-full shadow-2xl object-cover "
           />
         </div>
       )}

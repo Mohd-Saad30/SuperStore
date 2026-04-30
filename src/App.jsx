@@ -35,7 +35,7 @@ const Home = ({ products }) => {
     <Navbar />
     <CategoryButtons activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
 
-    <div className="text-center mt-12 mb-10 px-4">
+    <div className="text-center mt-6 mb-10 px-4">
       <h2 className="text-4xl font-bold text-gray-900 mb-2">Trending Products</h2>
       <p className="text-gray-500 text-sm italic">Our trends that customers love!</p>
     </div>
