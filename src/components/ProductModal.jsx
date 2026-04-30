@@ -43,9 +43,9 @@ const ProductModal = ({ product, onClose }) => {
             )}
 
             {isVideo(media[currentIndex]) ? (
-              <video src={media[currentIndex]} controls autoPlay muted className="w-full h-full object-contain" />
+              <video src={media[currentIndex]} controls autoPlay muted className="w-full h-full object-contain object-cover" />
             ) : (
-              <img src={media[currentIndex]} alt="product" className="w-full h-full object-contain" />
+              <img src={media[currentIndex]} alt="product" className="w-full h-full object-contain object-cover" />
             )}
           </div>
 
