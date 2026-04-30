@@ -6,7 +6,7 @@ const ManageProducts = ({ products, setProducts }) => {
   const [activeCategory, setActiveCategory] = useState('All Categories');
   const [deletingId, setDeletingId] = useState(null);
 
-  const categories = ['All Categories', 'Sunglasses', 'Mens Watch', 'Ladies Sunglasses', 'Premium sunglass'];
+  const categories = ["Ladies Watch", "Mens Watch", "Ladies Sunglasses", "Mens Sunglasses", "All Categories"];
 
   const filteredProducts = activeCategory === 'All Categories' 
     ? products 

@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router';
 
-const categories = ['Sunglasses', 'Mens Watch', 'Ladies Sunglasses', 'Premium sunglass'];
+const categories = ["Ladies Watch", "Mens Watch", "Ladies Sunglasses", "Mens Sunglasses"];
+
 
 // Constants for validation
 const MAX_IMAGE_SIZE = 2 * 1024 * 1024; // 2MB

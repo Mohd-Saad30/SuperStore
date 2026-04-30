@@ -9,13 +9,9 @@ const Navbar = () => {
           </div>
         </div>
 
-        
-        <ul className="hidden md:flex gap-10">
-          <li><button className="text-blue-600 font-bold text-sm uppercase">HOME</button></li>
-          <li><button className="text-gray-800 font-bold text-sm uppercase">MY ORDER</button></li>
-        </ul>
 
-     
+
+
       </nav>
     </header>
   );
