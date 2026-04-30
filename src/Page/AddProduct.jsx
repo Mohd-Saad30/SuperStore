@@ -6,8 +6,8 @@ const categories = ["Ladies Watch", "Mens Watch", "Ladies Sunglasses", "Mens Sun
 
 
 // Constants for validation
-const MAX_IMAGE_SIZE = 2 * 1024 * 1024; // 2MB
-const MAX_VIDEO_SIZE = 10 * 1024 * 1024; // 10MB
+const MAX_IMAGE_SIZE = 15 * 1024 * 1024; // 15MB
+const MAX_VIDEO_SIZE = 30 * 1024 * 1024; // 30MB
 
 const AddProduct = ({ setProducts }) => {
   const navigate = useNavigate();

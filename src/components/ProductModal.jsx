@@ -135,7 +135,7 @@ const ProductModal = ({ product, onClose }) => {
 
   const buyOnWhatsApp = () => {
     const msg = `*New Order*\nProduct: ${product.name}\nQuantity: ${quantity}\nPrice: ₹${product.price}\nLink: ${window.location.origin}`;
-    window.open(`https://wa.me/9905763301?text=${encodeURIComponent(msg)}`, '_blank');
+    window.open(`https://wa.me/+919905763301?text=${encodeURIComponent(msg)}`, '_blank');
   };
 
   return (
