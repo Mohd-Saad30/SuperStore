@@ -8,7 +8,9 @@ import Navbar from './components/Navbar.jsx';
 import CategoryButtons from './components/CategoryButtons';
 import ProductCard from './components/ProductCard';
 import ProductModal from './components/ProductModal';
+import Login from './Page/Login.jsx';
 import './App.css';
+import ProtectedRoute from './components/ProtectedRoute.jsx';
 
 // --- HOME COMPONENT ---
 const Home = ({ products, loading }) => {
@@ -115,11 +117,20 @@ const App = () => {
   return (
     <Routes>
      
-      <Route path="/" element={<Home products={products} loading={loading} />} />
       
-      <Route path="/admin" element={<Admin />} />
-      <Route path="/add-product" element={<AddProduct setProducts={setProducts} />} />
-      <Route path="/manage-products" element={<ManageProducts products={products} setProducts={setProducts} />} />
+
+      <Route path="/" element={<Home products={products} loading={loading}  />} />
+      <Route path="/login" element={<Login/>} />
+      
+      <Route path="/admin" element={
+        <ProtectedRoute><Admin /></ProtectedRoute>
+      } />
+      <Route path="/add-product" element={
+        <ProtectedRoute><AddProduct setProducts={setProducts} /></ProtectedRoute>
+      } />
+      <Route path="/manage-products" element={
+        <ProtectedRoute><ManageProducts products={products} setProducts={setProducts} /></ProtectedRoute>
+      } />
     </Routes>
   );
 };
