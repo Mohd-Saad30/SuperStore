@@ -5,8 +5,8 @@ import { Link, useNavigate } from 'react-router';
 const categories = ["Ladies Watch", "Mens Watch", "Ladies Sunglasses", "Mens Sunglasses"];
 
 
-const MAX_IMAGE_SIZE = 50 * 1024 * 1024; // 50MB
-const MAX_VIDEO_SIZE = 80 * 1024 * 1024; // 80MB
+const MAX_IMAGE_SIZE = 10 * 1024 * 1024; // 10MB (Cloudinary free tier limit)
+const MAX_VIDEO_SIZE = 100 * 1024 * 1024; // 100MB (Cloudinary free tier limit)
 
 const AddProduct = ({ setProducts }) => {
   const navigate = useNavigate();
@@ -66,9 +66,12 @@ const AddProduct = ({ setProducts }) => {
     formData.append("api_key", signatureData.apiKey);
     formData.append("timestamp", signatureData.timestamp);
     formData.append("signature", signatureData.signature);
-    // Cloudinary auto detects if it's image or video
+    
+    // Explicitly set resource_type so Cloudinary doesn't accidentally treat a video as an image
+    const resourceType = file.type.startsWith('video/') ? 'video' : 'image';
+    
     const res = await axios.post(
-      `https://api.cloudinary.com/v1_1/${signatureData.cloudName}/auto/upload`,
+      `https://api.cloudinary.com/v1_1/${signatureData.cloudName}/${resourceType}/upload`,
       formData
     );
     return res.data.secure_url;
@@ -133,7 +136,7 @@ const AddProduct = ({ setProducts }) => {
   const renderFileInput = (name, label, accept = "image/*", isVideo = false) => (
     <div className="flex flex-col gap-2">
       <label className="block text-sm font-medium text-gray-700">
-        {label} <span className="text-xs text-gray-400">({isVideo ? 'Max 80MB' : 'Max 50MB'})</span>
+        {label} <span className="text-xs text-gray-400">({isVideo ? 'Max 100MB' : 'Max 10MB'})</span>
       </label>
       <div className="flex items-center gap-4">
         <div className="flex-1 relative border-2 border-dashed border-gray-300 rounded-lg p-4 hover:bg-gray-50 transition-colors text-center cursor-pointer">
